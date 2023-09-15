@@ -3,14 +3,21 @@
 	export let month: number;
 </script>
 
-<form>
-	<label>
+<form class="flex space-x-12 w-1/3 mb-2">
+	<label class="text-gray-700 text-sm font-bold mb-2">
 		Year:
-		<input type="number" bind:value={year} />
+		<input
+			class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+			type="number"
+			bind:value={year}
+		/>
 	</label>
-	<br>
-	<label>
+	<label class="text-gray-700 text-sm font-bold mb-2">
 		Month:
-		<input type="number" bind:value={month} />
+		<input
+			class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+			type="number"
+			bind:value={month}
+		/>
 	</label>
 </form>

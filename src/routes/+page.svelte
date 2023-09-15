@@ -8,5 +8,7 @@
 	let month: number = 9;
 </script>
 
-<PageSelector bind:year bind:month />
-<MonthView {year} {month} />
+<div class="my-6 grid justify-items-center">
+	<PageSelector bind:year bind:month />
+	<MonthView {year} {month} />
+</div>
