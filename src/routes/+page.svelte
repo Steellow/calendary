@@ -1,4 +1,6 @@
 <script lang="ts">
+	import '../app.css';
+
 	import MonthView from '../components/month-view.svelte';
 	import PageSelector from '../components/page-selector.svelte';
 
@@ -7,4 +9,4 @@
 </script>
 
 <PageSelector bind:year bind:month />
-<MonthView bind:year bind:month />
+<MonthView {year} {month} />
