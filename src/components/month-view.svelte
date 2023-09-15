@@ -6,8 +6,8 @@
 	$: allWeekRows = getAllWeekRowsForCalendarView(year, month);
 </script>
 
-<div class="bg-red-100 canvas">
-	<table class="w-full h-full table-fixed border-collapse border-black">
+<div class="canvas">
+	<table class="w-full h-full table-fixed">
 		<thead>
 			<tr class="border border-black">
 				<th class="border border-black">MON</th>
@@ -21,9 +21,14 @@
 		</thead>
 		<tbody>
 			{#each allWeekRows as row, i ('row' + i)}
-				<tr class="border border-black">
-					{#each row as cell, i ('cell' + i)}
-						<td class="text-center border border-black mx-auto">{cell}</td>
+				<tr class="border border-black rounded">
+					{#each row as cell, idx ('cell' + idx)}
+						<td
+							class="text-center border border-black mx-auto text-xl font-bold {idx === 6 ||
+							idx === 5
+								? 'text-red-600'
+								: ''}">{cell}</td
+						>
 					{/each}
 				</tr>
 			{/each}
