@@ -42,10 +42,9 @@ export const getWeekCount = (year: number, month: number): number => {
 };
 
 /**
- * @returns Array of string arrays, where each nested array represents 1 week
- * If the date is not in the current month, "_" is returned
+ * @returns Array of full calendar week. nulls are dates from prev/next month
  */
-export const getAllWeekRowsForCalendarView = (year: number, month: number): (Date | null)[] => {
+export const getFullMonthArray = (year: number, month: number): (Date | null)[] => {
 	const monthArray: Date[] = getDaysInMonth(year, month);
 	const totalDays = getWeekCount(year, month) * 7;
 

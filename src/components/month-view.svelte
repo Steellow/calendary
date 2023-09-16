@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { getAllWeekRowsForCalendarView, isWeekend } from '../util/date-util';
+	import { getFullMonthArray, isWeekend } from '../util/date-util';
 
 	export let year: number;
 	export let month: number;
-	$: fullMonth = getAllWeekRowsForCalendarView(year, month);
+	$: fullMonth = getFullMonthArray(year, month);
 </script>
 
 <div class="canvas p-10">
