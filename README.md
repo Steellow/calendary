@@ -1,5 +1,7 @@
 # Calendary
 
+> Available @ [git.hanki.dev/calendary](https://git.hanki.dev/calendary/)
+
 _Calendary_ as in _calendar_ and _legendary_. A web app for generating printable wall calendars.
 
 Super work-in-progress, no ETA for release :D
