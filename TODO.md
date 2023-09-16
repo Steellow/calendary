@@ -1,6 +1,6 @@
 Cool UI
 Sort & clean code
-	Especially date-util
+Especially date-util
 Fix linter & formatter settings
 Canvas for printable stuff
 Select orientation

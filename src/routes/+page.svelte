@@ -8,7 +8,7 @@
 	let month: number = 9;
 </script>
 
-<div class="my-6 grid justify-items-center">
+<div class="mx-auto my-6 flex w-3/4">
 	<PageSelector bind:year bind:month />
 	<MonthView {year} {month} />
 </div>

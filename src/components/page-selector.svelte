@@ -3,19 +3,19 @@
 	export let month: number;
 </script>
 
-<form class="flex space-x-12 w-1/3 mb-2">
-	<label class="text-gray-700 text-sm font-bold mb-2">
+<form class="mr-12 flex w-1/5 flex-col space-y-4">
+	<label class="mb-2 text-sm font-bold text-gray-700">
 		Year:
 		<input
-			class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+			class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
 			type="number"
 			bind:value={year}
 		/>
 	</label>
-	<label class="text-gray-700 text-sm font-bold mb-2">
+	<label class="mb-2 text-sm font-bold text-gray-700">
 		Month:
 		<input
-			class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+			class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
 			type="number"
 			bind:value={month}
 		/>

@@ -7,7 +7,7 @@
 </script>
 
 <div class="canvas">
-	<table class="w-full h-full table-fixed">
+	<table class="h-full w-full table-fixed">
 		<thead>
 			<tr class="border border-black">
 				<th class="border border-black">MON</th>
@@ -21,10 +21,10 @@
 		</thead>
 		<tbody>
 			{#each allWeekRows as row, i ('row' + i)}
-				<tr class="border border-black rounded">
+				<tr class="rounded border border-black">
 					{#each row as cell, idx ('cell' + idx)}
 						<td
-							class="text-center border border-black mx-auto text-xl font-bold {idx === 6 ||
+							class="mx-auto border border-black text-center text-xl font-bold {idx === 6 ||
 							idx === 5
 								? 'text-red-600'
 								: ''}">{cell}</td
