@@ -3,10 +3,10 @@
 	export let value: any;
 </script>
 
-<label class="mb-2 text-sm font-bold text-gray-700">
+<label for={label} class="w-1/2 text-sm font-bold text-gray-700">
 	{label}:
 	<input
-		class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
+		class="w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow !outline-none focus:border-2 focus:border-red-500"
 		type="number"
 		bind:value
 	/>
