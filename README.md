@@ -14,3 +14,7 @@ I want to create something as smooth and customizable as [flowcv.io](https://flo
   - When using 0-based parameter it's always with `index`
   - For example, `month = 9` and `monthIndex = 8` would both be September
   - It's easier for me to wrap my head around in date loops when counting starts from 1
+
+## How printing works?
+
+By using javascript's own `windows.print()`. If you wanna know how only the calendar gets printed and not the whole page, check [app.css](./src/app.css).

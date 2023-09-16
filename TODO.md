@@ -7,3 +7,4 @@ Select orientation
 select paper size
 Print multiple pages
 Number input: + and - buttons
+Print month name

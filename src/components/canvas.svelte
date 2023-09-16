@@ -6,25 +6,27 @@
 	$: fullMonth = getFullMonthArray(year, month);
 </script>
 
-<div class="canvas ml-6 w-2/3 border px-6 pb-12 pt-5 shadow-xl">
-	<div class="grid grid-cols-7">
-		{#each ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as weekday}
-			<div class="h-min font-bold">{weekday}</div>
-		{/each}
-	</div>
+<div id="printable-shadow" class="ml-6 w-2/3 border shadow-xl">
+	<div id="printable" class="p-6">
+		<div class="grid grid-cols-7">
+			{#each ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as weekday}
+				<div class="h-min font-bold">{weekday}</div>
+			{/each}
+		</div>
 
-	<!-- Border also here so outlines aren't thinner than grid lines -->
-	<div class="grid h-full grid-cols-7 border">
-		{#each fullMonth as d, idx ('day' + idx)}
-			<div class="border p-1 text-lg {isWeekend(idx) ? 'text-red-600' : ''}">
-				{d !== null ? d.getDate().toString() : ''}
-			</div>
-		{/each}
+		<!-- Border also here so outlines aren't thinner than grid lines -->
+		<div class="grid h-full grid-cols-7 border">
+			{#each fullMonth as d, idx ('day' + idx)}
+				<div class="border p-1 text-lg {isWeekend(idx) ? 'text-red-600' : ''}">
+					{d !== null ? d.getDate().toString() : ''}
+				</div>
+			{/each}
+		</div>
 	</div>
 </div>
 
 <style>
-	.canvas {
+	#printable {
 		aspect-ratio: 1.41/1;
 	}
 </style>
