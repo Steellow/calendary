@@ -6,7 +6,7 @@
 	$: fullMonth = getFullMonthArray(year, month);
 </script>
 
-<div class="canvas ml-6 border px-6 pb-12 pt-5 shadow-xl">
+<div class="canvas ml-6 w-2/3 border px-6 pb-12 pt-5 shadow-xl">
 	<div class="grid grid-cols-7">
 		{#each ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as weekday}
 			<div class="h-min font-bold">{weekday}</div>
@@ -25,7 +25,6 @@
 
 <style>
 	.canvas {
-		width: 891px;
-		height: 630px;
+		aspect-ratio: 1.41/1;
 	}
 </style>
