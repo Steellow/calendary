@@ -6,7 +6,7 @@
 	$: allWeekRows = getAllWeekRowsForCalendarView(year, month);
 </script>
 
-<div class="canvas">
+<div class="canvas p-10">
 	<table class="h-full w-full table-fixed">
 		<thead>
 			<tr>

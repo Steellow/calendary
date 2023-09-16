@@ -8,7 +8,7 @@
 	let month: number = 9;
 </script>
 
-<div class="mx-auto my-6 flex w-3/4">
+<div class="mx-auto my-6 flex max-w-screen-xl">
 	<PageSelector bind:year bind:month />
 	<MonthView {year} {month} />
 </div>
