@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 /**
  * @param {int} The month number, not 0 based
  * @param {int} The year, not zero based, required to account for leap years
@@ -13,19 +14,13 @@ export function getDaysInMonth(year: number, month: number): Date[] {
 	}
 
 	return result;
-
-	// const date: any = new Date(Date.UTC(year, 8, 1));
-	// const days: Date[] = [];
-	// while (date.getUTCMonth() === month) {
-	// 	days.push(new Date(date));
-	// 	date.setUTCDate(date.getUTCDate() + 1);
-	// }
-	// return days;
 }
 
 export const isMonday = (date: Date): boolean => date.getDay() == 1;
 
-// Starts from 1
+/**
+ * @returns Returns weekday number, starting from 1
+ */
 export const getWeekdayFromMonday = (date: Date): number =>
 	date.getDay() == 0 ? 7 : date.getDay();
 
@@ -33,8 +28,8 @@ export const getWeekdayFromMonday = (date: Date): number =>
 export const getWeekdayIndexFromMonday = (date: Date): number => getWeekdayFromMonday(date) - 1;
 
 /**
- * @param year Year, not zero based
- * @param month Month, not zero based
+ * @returns Returns how many full calendar weeks is in that week,
+ * first and last week may be partial weeks (e.g. if week star from Sunday)
  */
 export const getWeekCount = (year: number, month: number): number => {
 	const firstOfMonth: Date = new Date(year, month - 1, 1);
@@ -46,6 +41,10 @@ export const getWeekCount = (year: number, month: number): number => {
 	return Math.ceil(used / 7);
 };
 
+/**
+ * @returns Array of string arrays, where each nested array represents 1 week
+ * If the date is not in the current month, "_" is returned
+ */
 export const getAllWeekRowsForCalendarView = (year: number, month: number): string[][] => {
 	const monthArray: Date[] = getDaysInMonth(year, month);
 	const totalDays = getWeekCount(year, month) * 7;
