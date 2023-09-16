@@ -3,7 +3,7 @@
 
 	export let year: number;
 	export let month: number;
-	$: allWeekRows = getAllWeekRowsForCalendarView(year, month);
+	$: fullMonth = getAllWeekRowsForCalendarView(year, month);
 </script>
 
 <div class="canvas p-10">
@@ -15,12 +15,10 @@
 
 	<!-- Border also here so outlines aren't thinner than grid lines -->
 	<div class="grid h-full grid-cols-7 border">
-		{#each allWeekRows as row, i ('row' + i)}
-			{#each row as cell, idx ('cell' + idx)}
-				<div class="border p-1 text-lg {isWeekend(idx) ? 'text-red-600' : ''}">
-					{cell === '_' ? '' : cell}
-				</div>
-			{/each}
+		{#each fullMonth as d, idx ('day' + idx)}
+			<div class="border p-1 text-lg {isWeekend(idx) ? 'text-red-600' : ''}">
+				{d !== null ? d.getDate().toString() : ''}
+			</div>
 		{/each}
 	</div>
 </div>

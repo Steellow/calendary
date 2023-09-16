@@ -45,13 +45,12 @@ export const getWeekCount = (year: number, month: number): number => {
  * @returns Array of string arrays, where each nested array represents 1 week
  * If the date is not in the current month, "_" is returned
  */
-export const getAllWeekRowsForCalendarView = (year: number, month: number): string[][] => {
+export const getAllWeekRowsForCalendarView = (year: number, month: number): (Date | null)[] => {
 	const monthArray: Date[] = getDaysInMonth(year, month);
 	const totalDays = getWeekCount(year, month) * 7;
 
-	const allWeekRows: string[][] = [];
+	const fullMonth: (Date | null)[] = [];
 
-	let currentWeek: string[] = [];
 	let calendarPointer: number = 0;
 
 	for (let i = 1; i < totalDays + 1; i++) {
@@ -62,20 +61,15 @@ export const getAllWeekRowsForCalendarView = (year: number, month: number): stri
 			(i < 8 && i != getWeekdayFromMonday(d)) ||
 			calendarPointer > monthArray.length
 		) {
-			currentWeek.push('_');
+			fullMonth.push(null);
 		} else {
-			currentWeek.push(d.getDate().toString());
+			fullMonth.push(d);
 			calendarPointer++;
-		}
-
-		if (i % 7 == 0) {
-			allWeekRows.push(currentWeek);
-			currentWeek = [];
 		}
 	}
 
-	return allWeekRows;
+	return fullMonth;
 };
 
-export const isWeekend = (weekdayIndex: number): boolean =>
-	weekdayIndex === 5 || weekdayIndex === 6;
+export const isWeekend = (calendarIndex: number): boolean =>
+	calendarIndex % 7 === 5 || calendarIndex % 7 === 6;
