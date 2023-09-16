@@ -77,3 +77,6 @@ export const getAllWeekRowsForCalendarView = (year: number, month: number): stri
 
 	return allWeekRows;
 };
+
+export const isWeekend = (weekdayIndex: number): boolean =>
+	weekdayIndex === 5 || weekdayIndex === 6;
