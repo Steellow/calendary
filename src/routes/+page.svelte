@@ -4,7 +4,6 @@
 	import Canvas from '../components/canvas.svelte';
 	import PrintButton from '../components/print-button.svelte';
 	import Options from '../components/options.svelte';
-	import { getCanvasAspectRatio } from '../util/canvas-util';
 
 	let paperSizeIndex: number;
 	let orientation: string = 'Landscape';
@@ -12,8 +11,6 @@
 		console.log('New orientation: ' + option);
 		orientation = option;
 	};
-
-	$: aspectRatio = getCanvasAspectRatio(paperSizeIndex, orientation);
 
 	let year: number = 2023;
 	let monthIndex: number = 9; // Using index so Dropdown works correctly
@@ -25,6 +22,6 @@
 		<PrintButton />
 	</div>
 	<div class="mr-10 w-2/3" id="canvas-max-width">
-		<Canvas {year} month={monthIndex + 1} {aspectRatio} />
+		<Canvas {year} month={monthIndex + 1} />
 	</div>
 </div>

@@ -2,8 +2,6 @@
 	import { monthNames } from '../util/constants';
 	import { getFullMonthArray, isWeekend } from '../util/date-util';
 
-	export let aspectRatio: number;
-
 	let canvasReady = false;
 
 	export let year: number;
@@ -14,7 +12,7 @@
 		const parentDiv = document.getElementById('canvas-max-width');
 		const printableShadow = document.getElementById('printable-shadow');
 
-		const parentWidth = parentDiv?.offsetWidth;
+		const parentWidth = parentDiv!!.offsetWidth;
 		const parentHeight = window.innerHeight * 0.9;
 
 		const targetWidth = 3508;
