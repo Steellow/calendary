@@ -24,7 +24,7 @@
 		<Options bind:year bind:monthIndex bind:paperSizeIndex bind:orientation {setOrientation} />
 		<PrintButton />
 	</div>
-	<div class="mr-10 w-2/3">
+	<div class="mr-10 w-2/3" id="canvas-max-width">
 		<Canvas {year} month={monthIndex + 1} {aspectRatio} />
 	</div>
 </div>
