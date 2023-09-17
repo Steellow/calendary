@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+	/* Scaling down large div causes unecessary scrollbar. */
+	overflow: hidden;
+}
+
 @media print {
 	@page {
 		/* Removes header and footer from print area */
