@@ -5,8 +5,12 @@
 
 	let canvasReady = false;
 
-	export let year: number;
-	export let month: number;
+	let year: number;
+	store.year.subscribe((v) => (year = v));
+
+	let month: number;
+	store.monthIndex.subscribe((v) => (month = v + 1));
+
 	$: fullMonth = getFullMonthArray(year, month);
 
 	const calculateScaleFactor = () => {

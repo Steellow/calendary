@@ -5,9 +5,7 @@
 	export let store: Writable<number>;
 
 	let value: number;
-	store.subscribe((v) => {
-		value = v;
-	});
+	store.subscribe((v) => (value = v));
 
 	const buttonClasses =
 		'border border-gray-400 px-4 text-sm font-semibold text-gray-800 shadow hover:bg-slate-100 focus:bg-slate-200';

@@ -10,4 +10,4 @@ Can't see borders if size is too small
 Tidy up scaling code
 Styling settings
 Fix printable canvas
-Migrate all values to store.ts
+Default to current year-month
