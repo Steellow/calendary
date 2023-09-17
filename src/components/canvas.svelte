@@ -9,8 +9,8 @@
 	$: fullMonth = getFullMonthArray(year, month);
 </script>
 
-<div id="printable-shadow" class="ml-6 w-2/3 border shadow-xl">
-	<div style="aspect-ratio: {aspectRatio};" id="printable" class="p-6">
+<div style="aspect-ratio: {aspectRatio};" id="printable-shadow" class="ml-6 border shadow-xl">
+	<div id="printable" class="h-full p-6">
 		<div class="flex h-full flex-col">
 			<h1 class="mb-6 text-center text-4xl font-bold">
 				{monthNames[month - 1]}
@@ -33,3 +33,10 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	#printable-shadow {
+		max-height: 90vh;
+		aspect-ratio: 1.41;
+	}
+</style>
