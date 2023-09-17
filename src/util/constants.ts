@@ -12,3 +12,5 @@ export const monthNames = [
 	'November',
 	'December'
 ];
+
+export const paperSizes = ['A4', 'A3', 'Letter', 'Legal', 'Ledger'];
