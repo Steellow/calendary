@@ -3,6 +3,8 @@
 	import Input from './input.svelte';
 	import { monthNames, paperSizes } from '../util/constants';
 	import ButtonGroup from './button-group.svelte';
+	import NumberInput from './number-input.svelte';
+	import { store } from '../util/store';
 
 	export let paperSizeIndex: number;
 	export let orientation: string;
@@ -27,5 +29,8 @@
 	<div class="flex space-x-4 {rowHeight}">
 		<Input label="Year" bind:value={year} />
 		<Dropdown label="Month" bind:selected={monthIndex} options={monthNames} />
+	</div>
+	<div class="flex space-x-4 {rowHeight}">
+		<NumberInput label="Title size" store={store.titleSize} />
 	</div>
 </form>

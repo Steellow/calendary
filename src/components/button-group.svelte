@@ -31,7 +31,7 @@
 				name={label}
 				class="border-gray-400 px-3 text-sm font-semibold text-gray-800 shadow {getBorder(
 					idx
-				)} {option === selected ? 'bg-slate-200' : ''}"
+				)} {option === selected ? 'bg-slate-200' : 'hover:bg-slate-100 focus:bg-slate-200'}"
 				on:click|preventDefault={() => onSelection(option)}
 			>
 				{option}

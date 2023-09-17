@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { monthNames } from '../util/constants';
 	import { getFullMonthArray, isWeekend } from '../util/date-util';
+	import { store } from '../util/store';
 
 	let canvasReady = false;
 
@@ -33,6 +34,10 @@
 		calculateScaleFactor();
 		canvasReady = true;
 	}
+
+	// Style settings
+	let titleSize: number;
+	store.titleSize.subscribe((v) => (titleSize = v));
 </script>
 
 <div
@@ -42,7 +47,7 @@
 >
 	<div id="printable" class="h-full p-20">
 		<div class="flex h-full flex-col">
-			<h1 class="mb-16 text-center text-9xl font-bold">
+			<h1 class="mb-16 text-center font-bold" style="font-size: {titleSize}rem;">
 				{monthNames[month - 1]}
 			</h1>
 
