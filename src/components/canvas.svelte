@@ -4,6 +4,8 @@
 
 	export let aspectRatio: number;
 
+	let canvasReady = false;
+
 	export let year: number;
 	export let month: number;
 	$: fullMonth = getFullMonthArray(year, month);
@@ -33,12 +35,13 @@
 	if (typeof window !== 'undefined') {
 		window.addEventListener('resize', calculateScaleFactor);
 		calculateScaleFactor();
+		canvasReady = true;
 	}
 </script>
 
 <div
 	id="printable-shadow"
-	class="ml-6 origin-top-left border shadow-xl"
+	class="{canvasReady ? 'visible' : 'collapse'} ml-6 origin-top-left border shadow-xl"
 	style="width: 3508px; height: 2480px;"
 >
 	<div id="printable" class="h-full p-20">
@@ -49,14 +52,14 @@
 
 			<div class="grid grid-cols-7">
 				{#each ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as weekday}
-					<div class="h-min text-5xl font-bold">{weekday}</div>
+					<div class="h-min text-6xl font-bold">{weekday}</div>
 				{/each}
 			</div>
 
 			<!-- Border also here so outlines aren't thinner than grid lines -->
 			<div class="grid flex-grow grid-cols-7 border border-4">
 				{#each fullMonth as d, idx ('day' + idx)}
-					<div class="border border-4 p-1 text-5xl {isWeekend(idx) ? 'text-red-600' : ''}">
+					<div class="border border-4 p-1 text-6xl {isWeekend(idx) ? 'text-red-600' : ''}">
 						{d !== null ? d.getDate().toString() : ''}
 					</div>
 				{/each}
