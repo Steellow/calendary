@@ -15,7 +15,6 @@
 
 	const calculateScaleFactor = () => {
 		const parentDiv = document.getElementById('canvas-max-width');
-		const printableShadow = document.getElementById('printable-shadow');
 
 		const parentWidth = parentDiv!!.offsetWidth;
 		const parentHeight = window.innerHeight * 0.9;
@@ -28,6 +27,7 @@
 
 		const scaleFactor = Math.min(scaleX, scaleY);
 
+		const printableShadow = document.getElementById('printable-shadow');
 		if (printableShadow) {
 			printableShadow.style.transform = `scale(${scaleFactor})`;
 		}

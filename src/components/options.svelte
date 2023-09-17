@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Dropdown from './dropdown.svelte';
-	import Input from './input.svelte';
 	import { monthNames, paperSizes } from '../util/constants';
 	import ButtonGroup from './button-group.svelte';
 	import NumberInput from './number-input.svelte';
