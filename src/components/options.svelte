@@ -32,5 +32,6 @@
 	</div>
 	<div class="flex space-x-4 {rowHeight}">
 		<NumberInput label="Title size" store={store.titleSize} />
+		<NumberInput label="Text size" store={store.textSize} />
 	</div>
 </form>

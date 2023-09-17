@@ -38,6 +38,9 @@
 	// Style settings
 	let titleSize: number;
 	store.titleSize.subscribe((v) => (titleSize = v));
+
+	let textSize: number;
+	store.textSize.subscribe((v) => (textSize = v));
 </script>
 
 <div
@@ -53,14 +56,17 @@
 
 			<div class="grid grid-cols-7">
 				{#each ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as weekday}
-					<div class="h-min text-6xl font-bold">{weekday}</div>
+					<div class="h-min font-bold" style="font-size: {textSize}rem;">{weekday}</div>
 				{/each}
 			</div>
 
 			<!-- Border also here so outlines aren't thinner than grid lines -->
 			<div class="grid flex-grow grid-cols-7 border border-4">
 				{#each fullMonth as d, idx ('day' + idx)}
-					<div class="border border-4 p-1 text-6xl {isWeekend(idx) ? 'text-red-600' : ''}">
+					<div
+						class="border border-4 pl-6 pt-2 {isWeekend(idx) ? 'text-red-600' : ''}"
+						style="font-size: {textSize}rem;"
+					>
 						{d !== null ? d.getDate().toString() : ''}
 					</div>
 				{/each}
