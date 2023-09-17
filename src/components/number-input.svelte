@@ -16,7 +16,7 @@
 	<div role="group" class="inline-flex h-full w-full">
 		<button
 			on:click|preventDefault={() => store.update((n) => n - 1)}
-			class="rounded-l-md {buttonClasses}">-</button
+			class="rounded-l-md {buttonClasses}">&minus;</button
 		>
 		<div
 			class="my-auto flex h-full w-full border-b border-t border-gray-400 px-4 text-center align-middle text-base shadow"
@@ -25,7 +25,7 @@
 		</div>
 		<button
 			on:click|preventDefault={() => store.update((n) => n + 1)}
-			class="rounded-r-md {buttonClasses}">+</button
+			class="rounded-r-md {buttonClasses}">&plus;</button
 		>
 	</div>
 </label>

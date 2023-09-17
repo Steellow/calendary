@@ -19,7 +19,7 @@
 		/>
 	</div>
 	<div class="flex space-x-4 {rowHeight}">
-		<Input label="Year" store={store.year} />
+		<NumberInput label="Year" store={store.year} />
 		<Dropdown label="Month" store={store.monthIndex} options={monthNames} />
 	</div>
 	<div class="flex space-x-4 {rowHeight}">

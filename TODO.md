@@ -11,3 +11,6 @@ Tidy up scaling code
 Styling settings
 Fix printable canvas
 Default to current year-month
+Setting: full weekday name
+Setting: date number location
+Setting: Weekends different color
