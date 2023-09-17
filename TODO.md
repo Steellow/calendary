@@ -7,4 +7,6 @@ Make the canvas un-scrollable, max height = screen height
 Automatic deployment 
 Week numbers
 Can't see borders if size is too small
-Scale stuff in relation to canvas size
+Tidy up scaling code
+Styling settings
+Fix printable canvas
