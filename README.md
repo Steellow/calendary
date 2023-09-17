@@ -12,7 +12,7 @@ I want to create something as smooth and customizable as [flowcv.io](https://flo
 
 ### How printing works?
 
-By using javascript's own `windows.print()`. To see how the calendar gets printed and not the whole page, check [app.css](./src/app.css).
+By using javascript's own `window.print()`. To see how the calendar gets printed and not the whole page, check [app.css](./src/app.css).
 
 ### How preview works?
 
