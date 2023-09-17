@@ -45,7 +45,7 @@
 
 <div
 	id="printable-shadow"
-	class="{canvasReady ? 'visible' : 'collapse'} ml-6 origin-top-left border shadow-xl"
+	class="{canvasReady ? 'visible' : 'collapse'} ml-6 origin-top-left border shadow-2xl"
 	style="width: 3508px; height: 2480px;"
 >
 	<div id="printable" class="h-full p-20">
