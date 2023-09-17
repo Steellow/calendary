@@ -2,13 +2,15 @@
 	import { monthNames } from '../util/constants';
 	import { getFullMonthArray, isWeekend } from '../util/date-util';
 
+	export let aspectRatio: number;
+
 	export let year: number;
 	export let month: number;
 	$: fullMonth = getFullMonthArray(year, month);
 </script>
 
 <div id="printable-shadow" class="ml-6 w-2/3 border shadow-xl">
-	<div id="printable" class="p-6">
+	<div style="aspect-ratio: {aspectRatio};" id="printable" class="p-6">
 		<div class="flex h-full flex-col">
 			<h1 class="mb-6 text-center text-4xl font-bold">
 				{monthNames[month - 1]}
@@ -31,9 +33,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	#printable {
-		aspect-ratio: 1.41/1;
-	}
-</style>

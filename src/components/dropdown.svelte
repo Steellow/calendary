@@ -13,7 +13,7 @@
 		bind:value={selected}
 	>
 		{#each options as option, index}
-			<option value={typeof selected === 'string' ? selected : index + 1}>{option}</option>
+			<option value={index}>{option}</option>
 		{/each}
 	</select>
 </label>

@@ -2,6 +2,7 @@
 	export let label: string;
 	export let options: string[];
 	export let selected: string;
+	export let onSelection: (option: string) => void;
 
 	const getBorder = (idx: number) => {
 		if (options.length === 2) {
@@ -31,7 +32,7 @@
 				class="border-gray-400 px-3 text-sm font-semibold text-gray-800 shadow {getBorder(
 					idx
 				)} {option === selected ? 'bg-slate-200' : ''}"
-				on:click|preventDefault={() => (selected = option)}
+				on:click|preventDefault={() => onSelection(option)}
 			>
 				{option}
 			</button>
