@@ -20,6 +20,8 @@ By setting fixed size for the div where the calendar gets drawn. For A4 paper it
 Since nobody has that big monitor it needs to be scaled down using `transform: scale()`.
 The scale factor gets calculated from your window size, check [`calculateScaleFactor()`](./src/components/canvas.svelte).
 
+`aspect-ratio` doesn't work in this case since we need to scale font sizes inside the div.
+
 ## Coventions
 
 - In the code date related numbers start from 1, not 0
