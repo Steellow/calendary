@@ -16,14 +16,12 @@
 
 		const parentWidth = parentDiv?.offsetWidth;
 		const parentHeight = window.innerHeight * 0.9;
-		console.log('parentWidth: ' + parentWidth + ', parentHeight: ' + parentHeight);
 
 		const targetWidth = 3508;
 		const targetHeight = 2480;
 
 		const scaleX = parentWidth / targetWidth;
 		const scaleY = parentHeight / targetHeight;
-		console.log('scaleX: ' + scaleX + ', scaleY: ' + scaleY);
 
 		const scaleFactor = Math.min(scaleX, scaleY);
 
