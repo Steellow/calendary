@@ -3,7 +3,7 @@
 
 	import Canvas from '../components/canvas.svelte';
 	import PrintButton from '../components/print-button.svelte';
-	import Options from '../components/options.svelte';
+	import Options from '../components/settings/settings.svelte';
 </script>
 
 <div class="m-10 mx-auto flex max-w-screen-2xl">
