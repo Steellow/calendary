@@ -26,6 +26,9 @@
 		<NumberInput label="Title size" store={store.titleSize} />
 		<NumberInput label="Text size" store={store.textSize} />
 	</div>
+	<div class="flex p-0 {rowClasses}">
+		<NumberInput label="Weekday size" store={store.weekdaySize} />
+	</div>
 	<div class={rowClasses}>
 		<ButtonGroup label="Weekday style" options={weekdayStyles} store={store.weekdayStyle} />
 	</div>

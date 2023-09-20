@@ -47,6 +47,9 @@
 	let textSize: number;
 	store.textSize.subscribe((v) => (textSize = v));
 
+	let weekdaySize: number;
+	store.weekdaySize.subscribe((v) => (weekdaySize = v));
+
 	let weekdayStyle: string;
 	store.weekdayStyle.subscribe((v) => (weekdayStyle = v));
 </script>
@@ -64,7 +67,7 @@
 
 			<div class="grid grid-cols-7">
 				{#each getWeekdayNames(weekdayStyle) as weekday}
-					<div class="h-min font-bold" style="font-size: {textSize}rem;">{weekday}</div>
+					<div class="h-min font-bold" style="font-size: {weekdaySize}rem;">{weekday}</div>
 				{/each}
 			</div>
 

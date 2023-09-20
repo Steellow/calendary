@@ -9,6 +9,7 @@ export const store = {
 	monthIndex: writable(8), // Storing index, so the dropdown work ootb
 
 	titleSize: writable(9),
+	weekdaySize: writable(5),
 	textSize: writable(5),
 
 	weekdayStyle: writable(weekdayStyles[0])
