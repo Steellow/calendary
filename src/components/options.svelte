@@ -21,7 +21,8 @@
 		<NumberInput label="Year" store={store.year} />
 		<Dropdown label="Month" store={store.monthIndex} options={monthNames} />
 	</div>
-	<div class="flex space-x-4 {rowHeight}">
+	<h3 class="rounded bg-stone-200 py-2 pl-2 text-xl font-bold">Theme</h3>
+	<div class="!mt-2 flex space-x-4 p-0 {rowHeight}">
 		<NumberInput label="Title size" store={store.titleSize} />
 		<NumberInput label="Text size" store={store.textSize} />
 	</div>
