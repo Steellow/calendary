@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getTitleAlignClass, getWeekdayNames } from '../util/canvas-util';
+	import { formatString, getTitleAlignClass, getWeekdayNames } from '../util/canvas-util';
 	import { monthNames } from '../util/constants';
 	import { getFullMonthArray, isWeekend } from '../util/date-util';
 	import { store } from '../util/store';
@@ -47,6 +47,9 @@
 	let titleAlign: string;
 	store.titleAlign.subscribe((v) => (titleAlign = v));
 
+	let titleLetterCase: string;
+	store.titleLetterCase.subscribe((v) => (titleLetterCase = v));
+
 	let textSize: number;
 	store.textSize.subscribe((v) => (textSize = v));
 
@@ -68,7 +71,7 @@
 				class="mb-16 font-bold {getTitleAlignClass(titleAlign)}"
 				style="font-size: {titleSize}rem;"
 			>
-				{monthNames[month - 1]}
+				{formatString(monthNames[month - 1], titleLetterCase)}
 			</h1>
 
 			<div class="grid grid-cols-7">

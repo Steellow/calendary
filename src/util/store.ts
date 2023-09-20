@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-import { orientationOptions, titleAlignOptions, weekdayStyles } from './constants';
+import { letterCases, orientationOptions, titleAlignOptions, weekdayStyles } from './constants';
 
 export const store = {
 	paperSizeIndex: writable(0),
@@ -11,6 +11,7 @@ export const store = {
 	// Title settings
 	titleSize: writable(9),
 	titleAlign: writable(titleAlignOptions[1]),
+	titleLetterCase: writable(letterCases[0]),
 
 	// Weekday options
 	weekdaySize: writable(5),

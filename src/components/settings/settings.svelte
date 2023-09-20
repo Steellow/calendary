@@ -1,6 +1,12 @@
 <script lang="ts">
 	import Dropdown from '../dropdown.svelte';
-	import { monthNames, paperSizes, titleAlignOptions, weekdayStyles } from '../../util/constants';
+	import {
+		letterCases,
+		monthNames,
+		paperSizes,
+		titleAlignOptions,
+		weekdayStyles
+	} from '../../util/constants';
 	import ButtonGroup from '../button-group.svelte';
 	import NumberInput from '../number-input.svelte';
 	import { store } from '../../util/store';
@@ -31,6 +37,9 @@
 	<div class="!mt-2 flex p-0 {rowClasses}">
 		<NumberInput label="Size" store={store.titleSize} />
 		<ButtonGroup label="Align" options={titleAlignOptions} store={store.titleAlign} />
+	</div>
+	<div class="flex p-0 {rowClasses}">
+		<ButtonGroup label="Letter case" options={letterCases} store={store.titleLetterCase} />
 	</div>
 
 	<!---- Weekday style -->

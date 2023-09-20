@@ -29,3 +29,16 @@ export const getTitleAlignClass = (align: string) => {
 			return 'text-center';
 	}
 };
+
+export const formatString = (str: string, letterCase: string) => {
+	switch (letterCase) {
+		case 'lowercase':
+			return str.toLocaleLowerCase();
+
+		case 'UPPERCASE':
+			return str.toLocaleUpperCase();
+
+		default:
+			return str[0].toLocaleUpperCase() + str.slice(1).toLocaleLowerCase();
+	}
+};
