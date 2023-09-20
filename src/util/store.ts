@@ -16,6 +16,7 @@ export const store = {
 	// Weekday options
 	weekdaySize: writable(5),
 	weekdayStyle: writable(weekdayStyles[0]),
+	weekdayLetterCase: writable(letterCases[0]),
 
 	// Date box options
 	textSize: writable(5)

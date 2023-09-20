@@ -58,6 +58,9 @@
 
 	let weekdayStyle: string;
 	store.weekdayStyle.subscribe((v) => (weekdayStyle = v));
+
+	let weekdayLetterCase: string;
+	store.weekdayLetterCase.subscribe((v) => (weekdayLetterCase = v));
 </script>
 
 <div
@@ -75,7 +78,7 @@
 			</h1>
 
 			<div class="grid grid-cols-7">
-				{#each getWeekdayNames(weekdayStyle) as weekday}
+				{#each getWeekdayNames(weekdayStyle, weekdayLetterCase) as weekday}
 					<div class="h-min font-bold" style="font-size: {weekdaySize}rem;">{weekday}</div>
 				{/each}
 			</div>

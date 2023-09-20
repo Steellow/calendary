@@ -17,6 +17,6 @@ export const paperSizes = ['A4', 'A3', 'Letter', 'Legal', 'Ledger'];
 
 // Button group options
 export const orientationOptions = ['Landscape', 'Portrait'];
-export const weekdayStyles = ['Monday', 'Mon', 'MONDAY', 'MON'];
+export const weekdayStyles = ['Monday', 'Mon'];
 export const titleAlignOptions = ['Left', 'Center', 'Right'];
 export const letterCases = ['Titlecase', 'lowercase', 'UPPERCASE'];

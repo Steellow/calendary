@@ -46,9 +46,10 @@
 	<h4 class="!mt-10 border-t pt-2 text-xl font-semibold">Weekday</h4>
 	<div class="!mt-2 flex p-0 {rowClasses}">
 		<NumberInput label="Size" store={store.weekdaySize} />
+		<ButtonGroup label="Style" options={weekdayStyles} store={store.weekdayStyle} />
 	</div>
 	<div class={rowClasses}>
-		<ButtonGroup label="Style" options={weekdayStyles} store={store.weekdayStyle} />
+		<ButtonGroup label="Letter case" options={letterCases} store={store.weekdayLetterCase} />
 	</div>
 
 	<!-- Date number style -->
