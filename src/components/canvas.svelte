@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getWeekdayNames } from '../util/canvas-util';
 	import { monthNames } from '../util/constants';
 	import { getFullMonthArray, isWeekend } from '../util/date-util';
 	import { store } from '../util/store';
@@ -45,6 +46,9 @@
 
 	let textSize: number;
 	store.textSize.subscribe((v) => (textSize = v));
+
+	let weekdayStyle: string;
+	store.weekdayStyle.subscribe((v) => (weekdayStyle = v));
 </script>
 
 <div
@@ -59,7 +63,7 @@
 			</h1>
 
 			<div class="grid grid-cols-7">
-				{#each ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as weekday}
+				{#each getWeekdayNames(weekdayStyle) as weekday}
 					<div class="h-min font-bold" style="font-size: {textSize}rem;">{weekday}</div>
 				{/each}
 			</div>

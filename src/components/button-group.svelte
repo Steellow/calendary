@@ -10,20 +10,12 @@
 	store.subscribe((v) => (selected = v));
 
 	const getBorder = (idx: number) => {
-		if (options.length === 2) {
-			if (idx === 0) {
-				return 'border-l border-t border-b rounded-l-md';
-			} else {
-				return 'border rounded-r-md';
-			}
+		if (idx === 0) {
+			return 'border rounded-l-md';
+		} else if (idx === options.length - 1) {
+			return 'border-t border-r border-b rounded-r-md';
 		} else {
-			if (idx === 0) {
-				return 'border rounded-l-md';
-			} else if (idx === options.length - 1) {
-				return 'border rounded-r-md';
-			} else {
-				return 'border-b border-t';
-			}
+			return 'border-t border-b border-r';
 		}
 	};
 </script>
@@ -34,7 +26,7 @@
 		{#each options as option, idx ('orientation-button-' + idx)}
 			<button
 				name={label}
-				class="border-gray-400 px-3 text-sm font-semibold text-gray-800 shadow {getBorder(
+				class="w-full border-gray-400 px-3 text-sm font-semibold text-gray-800 shadow {getBorder(
 					idx
 				)} {option === selected ? 'bg-slate-200' : 'hover:bg-slate-100 focus:bg-slate-200'}"
 				on:click|preventDefault={() => store.set(option)}
