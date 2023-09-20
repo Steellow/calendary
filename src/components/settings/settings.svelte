@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Dropdown from '../dropdown.svelte';
-	import { monthNames, paperSizes, weekdayStyles } from '../../util/constants';
+	import { monthNames, paperSizes, titleAlignOptions, weekdayStyles } from '../../util/constants';
 	import ButtonGroup from '../button-group.svelte';
 	import NumberInput from '../number-input.svelte';
 	import { store } from '../../util/store';
@@ -29,16 +29,17 @@
 	<!---- Title style -->
 	<h4 class="!mt-0 text-xl font-semibold">Title</h4>
 	<div class="!mt-2 flex p-0 {rowClasses}">
-		<NumberInput label="Title size" store={store.titleSize} />
+		<NumberInput label="Size" store={store.titleSize} />
+		<ButtonGroup label="Align" options={titleAlignOptions} store={store.titleAlign} />
 	</div>
 
 	<!---- Weekday style -->
 	<h4 class="!mt-10 border-t pt-2 text-xl font-semibold">Weekday</h4>
 	<div class="!mt-2 flex p-0 {rowClasses}">
-		<NumberInput label="Weekday size" store={store.weekdaySize} />
+		<NumberInput label="Size" store={store.weekdaySize} />
 	</div>
 	<div class={rowClasses}>
-		<ButtonGroup label="Weekday style" options={weekdayStyles} store={store.weekdayStyle} />
+		<ButtonGroup label="Style" options={weekdayStyles} store={store.weekdayStyle} />
 	</div>
 
 	<!-- Date number style -->

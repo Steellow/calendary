@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getWeekdayNames } from '../util/canvas-util';
+	import { getTitleAlignClass, getWeekdayNames } from '../util/canvas-util';
 	import { monthNames } from '../util/constants';
 	import { getFullMonthArray, isWeekend } from '../util/date-util';
 	import { store } from '../util/store';
@@ -44,6 +44,9 @@
 	let titleSize: number;
 	store.titleSize.subscribe((v) => (titleSize = v));
 
+	let titleAlign: string;
+	store.titleAlign.subscribe((v) => (titleAlign = v));
+
 	let textSize: number;
 	store.textSize.subscribe((v) => (textSize = v));
 
@@ -61,7 +64,10 @@
 >
 	<div id="printable" class="h-full p-20">
 		<div class="flex h-full flex-col">
-			<h1 class="mb-16 text-center font-bold" style="font-size: {titleSize}rem;">
+			<h1
+				class="mb-16 font-bold {getTitleAlignClass(titleAlign)}"
+				style="font-size: {titleSize}rem;"
+			>
 				{monthNames[month - 1]}
 			</h1>
 
