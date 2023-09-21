@@ -10,6 +10,7 @@
 	import ButtonGroup from '../button-group.svelte';
 	import NumberInput from '../number-input.svelte';
 	import { store } from '../../util/store';
+	import PrintButton from '../print-button.svelte';
 
 	const rowClasses: string = 'space-x-4 h-10';
 </script>
@@ -56,5 +57,10 @@
 	<h4 class="!mt-10 border-t pt-2 text-xl font-semibold">Date number</h4>
 	<div class="!mt-2 flex p-0 {rowClasses}">
 		<NumberInput label="Text size" store={store.textSize} />
+	</div>
+	<!-- <PrintButton /> -->
+
+	<div class="!mt-10 border-t pb-20 pt-5">
+		<PrintButton />
 	</div>
 </form>

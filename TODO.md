@@ -15,3 +15,6 @@ Setting: full weekday name
 Setting: date number location
 Setting: Weekends different color
 Next week preview
+Show year
+	if align same as month name: top/right/bottom/left of month name
+Rebuild form... css seems to be fucked up
