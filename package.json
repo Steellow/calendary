@@ -34,6 +34,7 @@
   },
   "type": "module",
   "dependencies": {
+    "html2canvas": "^1.4.1",
     "svelte-preprocess": "^5.0.4"
   }
 }
