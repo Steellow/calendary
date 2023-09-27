@@ -28,9 +28,14 @@
 
 		const scaleFactor = Math.min(scaleX, scaleY);
 
+		const printable = document.getElementById('printable');
+		if (printable) {
+			printable.style.transform = `scale(${scaleFactor})`;
+		}
+
 		const printableShadow = document.getElementById('printable-shadow');
 		if (printableShadow) {
-			printableShadow.style.transform = `scale(${scaleFactor})`;
+			printableShadow.style.height = `${targetHeight * scaleFactor}px`;
 		}
 	};
 
@@ -63,12 +68,8 @@
 	store.weekdayLetterCase.subscribe((v) => (weekdayLetterCase = v));
 </script>
 
-<div
-	id="printable-shadow"
-	class="{canvasReady ? 'visible' : 'collapse'} ml-6 origin-top-left border shadow-2xl"
-	style="width: 3508px; height: 2480px;"
->
-	<div id="printable" class="h-full p-20">
+<div id="printable-shadow" class="ml-6 w-full origin-top-left border shadow-2xl">
+	<div id="printable" class="origin-top-left p-20" style="width: 3508px; height: 2480px;">
 		<div class="flex h-full flex-col">
 			<h1
 				class="mb-16 font-bold {getTitleAlignClass(titleAlign)}"
