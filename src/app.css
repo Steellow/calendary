@@ -1,26 +1,13 @@
 @tailwind base;
+@layer base {
+	img {
+		@apply inline-block;
+	}
+}
 @tailwind components;
 @tailwind utilities;
 
 body {
 	/* Scaling down large div causes unecessary scrollbar. */
 	overflow: hidden;
-}
-
-@media print {
-	@page {
-		/* Removes header and footer from print area */
-		margin: 0;
-	}
-	body {
-		visibility: hidden;
-	}
-	#printable {
-		visibility: visible;
-		position: absolute;
-		left: 0;
-		top: 0;
-		height: 100%;
-		width: 100%;
-	}
 }

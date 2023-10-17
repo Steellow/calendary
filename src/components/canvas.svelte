@@ -28,14 +28,14 @@
 
 		const scaleFactor = Math.min(scaleX, scaleY);
 
-		const printable = document.getElementById('printable');
-		if (printable) {
-			printable.style.transform = `scale(${scaleFactor})`;
-		}
-
 		const printableShadow = document.getElementById('printable-shadow');
 		if (printableShadow) {
 			printableShadow.style.height = `${targetHeight * scaleFactor}px`;
+		}
+
+		const printable = document.getElementById('printable');
+		if (printable) {
+			printable.style.transform = `scale(${scaleFactor})`;
 		}
 	};
 
@@ -80,7 +80,9 @@
 
 			<div class="grid grid-cols-7">
 				{#each getWeekdayNames(weekdayStyle, weekdayLetterCase) as weekday}
-					<div class="h-min font-bold" style="font-size: {weekdaySize}rem;">{weekday}</div>
+					<div class="font-bold" style="font-size: {weekdaySize}rem;">
+						{weekday}
+					</div>
 				{/each}
 			</div>
 
