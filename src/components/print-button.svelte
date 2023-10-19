@@ -7,16 +7,17 @@
 
 		// Create copy so the actual preview doesn't change size
 		const copy = printable?.cloneNode(true) as HTMLElement;
+		copy.id = 'temp';
 		copy.style.transform = 'none';
 
 		// Element must be in DOM for html2canvas to work
 		document.body.appendChild(copy);
 
-		html2canvas(printable, {
+		html2canvas(copy, {
 			// Rendering without setting scale seems to result in blurry image.
 			// Setting higher scale also seems to make the process a lot slower.
 			// Below 7 you can see some difference, above 7 everything looks the same.
-			scale: 7
+			// scale: 7
 		})
 			.then((canvas) => {
 				const doc = new jsPDF({
