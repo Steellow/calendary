@@ -1,4 +1,5 @@
 <script lang="ts">
+	import jsPDF from 'jspdf';
 	import html2canvas from 'html2canvas';
 
 	const print = () => {
@@ -11,15 +12,29 @@
 		// Element must be in DOM for html2canvas to work
 		document.body.appendChild(copy);
 
-		html2canvas(printable)
+		html2canvas(printable, {
+			// Rendering without setting scale seems to result in blurry image.
+			// Setting higher scale also seems to make the process a lot slower.
+			// Below 7 you can see some difference, above 7 everything looks the same.
+			scale: 7
+		})
 			.then((canvas) => {
-				canvas.toBlob((blob) => {
-					const link = document.createElement('a');
-					link.download = 'test.png';
-					link.href = URL.createObjectURL(blob as Blob);
-					link.click();
-					URL.revokeObjectURL(link.href);
+				const doc = new jsPDF({
+					orientation: 'landscape',
+					format: 'a4'
 				});
+
+				doc.addImage(
+					canvas,
+					'jpeg',
+					0,
+					0,
+					doc.internal.pageSize.getWidth(),
+					doc.internal.pageSize.getHeight(),
+					'test',
+					'NONE'
+				);
+				doc.save('test.pdf');
 			})
 			.then(() => {
 				copy.remove();
