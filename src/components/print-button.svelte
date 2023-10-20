@@ -1,8 +1,12 @@
 <script lang="ts">
 	import jsPDF from 'jspdf';
 	import html2canvas from 'html2canvas';
+	import LoadingSpider from './loading-spider.svelte';
+
+	let loading = false;
 
 	const print = () => {
+		loading = true;
 		const printable = document.querySelector('#printable') as HTMLElement;
 
 		// Create copy so the actual preview doesn't change size
@@ -39,6 +43,7 @@
 			})
 			.then(() => {
 				copy.remove();
+				loading = false;
 			});
 	};
 </script>
@@ -47,5 +52,9 @@
 	on:click|preventDefault={print}
 	class="w-full rounded border border-gray-400 px-4 py-2 font-semibold text-gray-800 shadow hover:bg-red-100"
 >
-	Print 🖨️
+	{#if loading}
+		<LoadingSpider />
+	{:else}
+		Print 🖨️
+	{/if}
 </button>
