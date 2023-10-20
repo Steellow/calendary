@@ -3,6 +3,7 @@
 	import { monthNames } from '../util/constants';
 	import { getFullMonthArray, isWeekend } from '../util/date-util';
 	import { store } from '../util/store';
+	import { onMount } from 'svelte';
 
 	let canvasReady = false;
 
@@ -39,11 +40,11 @@
 		}
 	};
 
-	if (typeof window !== 'undefined') {
-		window.addEventListener('resize', calculateScaleFactor);
+	onMount(() => {
 		calculateScaleFactor();
+		window.addEventListener('resize', calculateScaleFactor);
 		canvasReady = true;
-	}
+	});
 
 	// Style settings
 	let titleSize: number;
